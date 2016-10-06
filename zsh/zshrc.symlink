@@ -4,15 +4,17 @@ ZSH=$HOME/.oh-my-zsh
 # Projects folder
 export PROJECTS=~/dev
 
+#
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="jb"
 DEFAULT_USER="josh"
 
 # Base16 Shell
-BASE16_SHELL="$PROJECTS/dotfiles/zsh/base16-ocean.dark.sh"
+BASE16_SHELL=~/dotfiles/zsh/base16-ocean.dark.sh
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 export ZSH_CUSTOM=$PROJECTS/dotfiles/zsh
