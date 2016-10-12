@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# checks that zsh is installed on the system
 set -e
 cd "$(dirname "$0")"
 

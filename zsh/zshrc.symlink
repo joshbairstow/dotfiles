@@ -11,6 +11,7 @@ export PROJECTS=~/dev
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="jb"
+# looking into automatically linking in jb theme file.
 DEFAULT_USER="josh"
 
 # Base16 Shell
