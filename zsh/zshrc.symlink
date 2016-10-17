@@ -30,6 +30,11 @@ setopt RM_STAR_WAIT
 # good 'ol Bash
 setopt interactivecomments
 
+# set vim as default editor for programs that want text edited
+export EDITOR="vim"
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
