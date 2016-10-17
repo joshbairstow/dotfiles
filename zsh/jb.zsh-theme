@@ -134,41 +134,24 @@ print_context() {
 }
 
 # length calculation functions
+zero='%([BSUbfksu]|([FB]|){*})'
 function current_git_length() {
   local git_value=${vcs_info_msg_0_}
-  local git_length
-  local git_status="dirty"
-
-  if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    git_status="clean"
-  fi
-
-  if [ ${#git_value} != 0 ]; then
-    if [ $git_status = "clean" ]; then
-      (( git_length = ${#git_value} - 27 ))
-    else
-      (( git_length = ${#git_value} - 34 ))
-    fi
-  else
-    git_length=0
-  fi
+  local git_length=${#${(S%%)git_value//$~zero/}}
   echo $git_length
 }
 function current_dir_length() {
   local dir_value="$(print_dir)"
-  local zero='%([BSUbfksu]|([FB]|){*})'
   local dir_length=${#${(S%%)dir_value//$~zero/}}
   echo $dir_length
 }
 function current_context_length() {
   local context_value="$(print_context)"
-  local zero='%([BSUbfksu]|([FB]|){*})'
   local context_length=${#${(S%%)context_value//$~zero/}}
   echo $context_length
 }
 function current_node_length() {
   local node_value="$(print_node)"
-  local zero='%([BSUbfksu]|([FB]|){*})'
   local node_length=${#${(S%%)node_value//$~zero/}}
   echo $node_length
 }
