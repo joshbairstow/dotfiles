@@ -10,4 +10,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 
-colorscheme molokai
+colorscheme gruvbox
+syntax on
+set background=dark
