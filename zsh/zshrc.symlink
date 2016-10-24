@@ -81,6 +81,12 @@ if [[ -s $HOME/.rvm/scripts/rvm ]]; then
   source $HOME/.rvm/scripts/rvm;
 fi
 
+# adding node to PATH
+# include locally installed packages in PATH
+if [ -d "$HOME/opt" ]; then
+    PATH="$PATH:$HOME/opt/node/bin"
+fi
+
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
