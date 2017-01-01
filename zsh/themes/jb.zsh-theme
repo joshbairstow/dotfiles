@@ -14,6 +14,8 @@ zstyle ':vcs_info:*+*:*' debug false
 # https://github.com/mayth/dotfiles/blob/master/zshfiles/vcs_info.zsh
 zstyle ':vcs_info:git+set-message:*' hooks git-hook-begin git-push-status # git-untracked git-nomerge-branch git-stash-count
 
+autoload colors && colors
+
 # hook functions are called if there are working copy of git (not in .git directory)
 function +vi-git-hook-begin() {
   if [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
