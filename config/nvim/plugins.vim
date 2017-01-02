@@ -9,4 +9,7 @@ Plug 'scrooloose/nerdtree'
 " html
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
 
+" elm
+Plug 'lambdatoast/elm.vim'
+
 call plug#end()

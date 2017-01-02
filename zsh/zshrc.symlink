@@ -77,6 +77,10 @@ if [[ -s $HOME/.rvm/scripts/rvm ]]; then
   source $HOME/.rvm/scripts/rvm;
 fi
 
+# load nvm into this environment
+NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # this loads nvm
+
 # adding node to PATH
 # include locally installed packages in PATH
 if [ -d "$HOME/opt" ]; then
