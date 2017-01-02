@@ -44,7 +44,6 @@ source script/nvm.sh
 h_info "Creating vim directories"
 mkdir -p ~/.vim-tmp
 
-
 h_info "Configuring zsh as default shell"
 chsh -s $(which zsh)
 

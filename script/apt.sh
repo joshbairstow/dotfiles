@@ -14,6 +14,7 @@ apt-get install libssl-dev
 apt-get install git
 apt-get install zsh
 apt-get install tmux
+apt-get install tmuxinator
 
 # install neovim
 add-apt-repository ppa:neovim-ppa/unstable

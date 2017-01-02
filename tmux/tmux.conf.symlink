@@ -1,0 +1,42 @@
+# this setting should only be enabled on osx
+# set -g default-command "login-shell"
+
+# tmux display things in 256 colors
+set -g default-terminal "tmux-256color-italic"
+
+#  enable terminal compability
+set-option -ga terminal-overrides ",tmux-256color-italic:Tc"
+
+set -g history-limit 20000
+
+# automatically renumber tmux windows
+set -g renumber-windows on
+
+# unbind default prefix and set it to Ctrl+a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+######################
+#### Key Bindings ####
+######################
+
+# reload config file
+bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
+
+# quickly open a new window
+bind N new-window
+
+# split window and fix path for tmux 1.9
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+# pane movement shortcuts
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# enable mouse support for switching panes/windows
+setw -g mouse on
+# set-option -g -q mouse on
