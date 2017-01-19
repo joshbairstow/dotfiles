@@ -46,8 +46,8 @@ colorscheme gruvbox         " Set the colorscheme
 set background=dark
 
 " make the highlighting of tabs and other non-text less annoying
-highlight SpecialKey ctermbg=none ctermfg=8 guifg=#39332E
-highlight NonText ctermbg=none ctermfg=8 guifg=#39332E
+highlight SpecialKey ctermbg=none ctermfg=238 guifg=#39332E
+highlight NonText ctermbg=none ctermfg=238 guifg=#39332E
 
 " make comments and HTML attributes italic
 highlight Comment cterm=italic
@@ -60,6 +60,7 @@ set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
 set showbreak=…             " show ellipsis at breaking
+set cc=100                  " show suggested line length
 
 set autoindent              " automatically set indent of new line
 set smartindent
@@ -76,7 +77,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set backspace=indent,eol,start
 
 " Tab control
-set noexpandtab             " insert tabs rather than spaces for <Tab>
+set expandtab             " insert tabs rather than spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4               " the visible width of tabs
 set softtabstop=4           " edit as if the tabs are 4 characters wide
@@ -259,10 +260,12 @@ augroup END
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
-
+" auto open NERDTree on vim opening
+autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
+let g:NERDTreeWinSize=40
 
 let g:fzf_layout = { 'down': '~25%' }
 
