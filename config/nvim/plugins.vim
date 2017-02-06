@@ -12,4 +12,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily creat
 " elm
 Plug 'lambdatoast/elm.vim'
 
+" syntax highlighting
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
