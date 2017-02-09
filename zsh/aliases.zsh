@@ -17,7 +17,11 @@ else # OS X `ls`
 fi
 
 alias l="ls -lah ${colorflag}"
+alias ls="ls -lah ${colorflag}"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
+
+# local for work
+alias sshBuildslave="ssh -i ~/.ssh/sydney.pem ubuntu@buildslave.dev.nbvcloud.com"

@@ -46,12 +46,23 @@ colorscheme gruvbox         " Set the colorscheme
 set background=dark
 
 " make the highlighting of tabs and other non-text less annoying
-highlight SpecialKey ctermbg=none ctermfg=8 guifg=#39332E
-highlight NonText ctermbg=none ctermfg=8 guifg=#39332E
+highlight SpecialKey ctermbg=none ctermfg=237 guifg=#39332E
+highlight NonText ctermbg=none ctermfg=237 guifg=#39332E
+
+" set custom indent guide styles
+let g:indent_guides_auto_colors=0
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup=1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 
 " make comments and HTML attributes italic
 highlight Comment cterm=italic
 highlight htmlArg cterm=italic
+
+" highlight suggested max line column
+set cc=100
 
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
@@ -76,7 +87,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set backspace=indent,eol,start
 
 " Tab control
-set noexpandtab             " insert tabs rather than spaces for <Tab>
+set expandtab             " insert tabs rather than spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set tabstop=4               " the visible width of tabs
 set softtabstop=4           " edit as if the tabs are 4 characters wide
@@ -245,7 +256,7 @@ augroup configgroup
 
     autocmd BufNewFile,BufRead,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
 
-    autocmd! BufWritePost * Neomake
+    " autocmd! BufWritePost * Neomake
 augroup END
 
 " }}}
@@ -254,7 +265,8 @@ augroup END
 
 " FZF
 """""""""""""""""""""""""""""""""""""
-
+" Open NERDTree by default
+autocmd vimenter * NERDTree
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
@@ -263,6 +275,7 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeWinSize=50
 
 let g:fzf_layout = { 'down': '~25%' }
 

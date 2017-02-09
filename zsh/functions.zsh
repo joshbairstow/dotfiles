@@ -14,6 +14,15 @@ function colours() {
     done
 }
 
+# query and kill processes on a specific port
+function queryport() {
+    lsof -wni tcp:$1
+}
+
+function killport() {
+    kill -9 $(lsof -i tcp:$1 -t)
+}
+
 # # Create a new directory and enter it
 # function md() {
 #     mkdir -p "$@" && cd "$@"

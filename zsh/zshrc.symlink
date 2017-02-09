@@ -9,6 +9,7 @@ DOTFILES=$HOME/.dotfiles
 ZSH_THEME="jb"
 # looking into automatically linking in jb theme file.
 DEFAULT_USER="josh"
+ALTERNATE_USER="joshbairstow"
 
 # Base16 Shell
 BASE16_SHELL=~/.dotfiles/zsh/base16-ocean.dark.sh

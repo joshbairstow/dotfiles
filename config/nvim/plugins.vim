@@ -6,6 +6,9 @@ Plug 'morhetz/gruvbox'
 " utilities
 Plug 'scrooloose/nerdtree'
 
+" format
+Plug 'nathanaelkane/vim-indent-guides'
+
 " html
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
 
