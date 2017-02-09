@@ -5,6 +5,8 @@ Plug 'morhetz/gruvbox'
 
 " utilities
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " format
 Plug 'nathanaelkane/vim-indent-guides'
@@ -14,5 +16,9 @@ Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily creat
 
 " elm
 Plug 'lambdatoast/elm.vim'
+
+" syntax highlighting
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()

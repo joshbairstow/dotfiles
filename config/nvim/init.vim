@@ -42,7 +42,7 @@ let g:onedark_terminal_italics=1
 
 syntax on
 " set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors"
-colorscheme gruvbox         " Set the colorscheme
+colorscheme gruvbox           " Set the colorscheme
 set background=dark
 
 " make the highlighting of tabs and other non-text less annoying
@@ -55,7 +55,6 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 
 " make comments and HTML attributes italic
 highlight Comment cterm=italic
@@ -71,6 +70,7 @@ set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
 set showbreak=…             " show ellipsis at breaking
+set cc=100                  " show suggested line length
 
 set autoindent              " automatically set indent of new line
 set smartindent
@@ -89,9 +89,9 @@ set backspace=indent,eol,start
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4               " the visible width of tabs
-set softtabstop=4           " edit as if the tabs are 4 characters wide
-set shiftwidth=4            " number of spaces to use for indent and unindent
+set tabstop=2               " the visible width of tabs
+set softtabstop=2           " edit as if the tabs are 4 characters wide
+set shiftwidth=2            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
@@ -271,7 +271,8 @@ autocmd vimenter * NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
-
+" auto open NERDTree on vim opening
+autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
