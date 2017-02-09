@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 
 " utilities
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 
 " html
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
