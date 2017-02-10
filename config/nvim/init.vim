@@ -150,7 +150,7 @@ let mapleader = ','
 " remap esc
 inoremap jk <esc>
 
-" wipout buffer
+" wipeout buffer
 nmap <silent> <leader>b :bw<cr>
 
 " shortcut to save
@@ -271,8 +271,6 @@ autocmd vimenter * NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
-" auto open NERDTree on vim opening
-autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
