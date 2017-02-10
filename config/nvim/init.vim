@@ -42,16 +42,26 @@ let g:onedark_terminal_italics=1
 
 syntax on
 " set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors"
-colorscheme gruvbox         " Set the colorscheme
+colorscheme gruvbox           " Set the colorscheme
 set background=dark
 
 " make the highlighting of tabs and other non-text less annoying
 highlight SpecialKey ctermbg=none ctermfg=238 guifg=#39332E
 highlight NonText ctermbg=none ctermfg=238 guifg=#39332E
 
+" set custom indent guide styles
+let g:indent_guides_auto_colors=0
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup=1
+autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd ctermbg=236
+
 " make comments and HTML attributes italic
 highlight Comment cterm=italic
 highlight htmlArg cterm=italic
+
+" highlight suggested max line column
+set cc=100
 
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
@@ -140,7 +150,7 @@ let mapleader = ','
 " remap esc
 inoremap jk <esc>
 
-" wipout buffer
+" wipeout buffer
 nmap <silent> <leader>b :bw<cr>
 
 " shortcut to save
@@ -265,7 +275,7 @@ autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
-let g:NERDTreeWinSize=40
+let NERDTreeWinSize=50
 
 let g:fzf_layout = { 'down': '~25%' }
 
@@ -340,6 +350,10 @@ let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts=1
+let g:airline_left_sep='<U+E0B0>'
+let g:airline_right_sep='<U+E0B2>'
 
 let g:tsuquyomi_disable_default_mappings = 1
 
