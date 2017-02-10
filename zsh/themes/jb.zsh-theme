@@ -129,8 +129,8 @@ print_context() {
   if [[ -n "$SSH_CLIENT" ]]; then
     context_details+="%{$fg[red]%}[ SSH ]"
   fi
-  if [[ "$USER" != "$DEFAULT_USER" ]]; then
-    context_details="%{$fg[red]%}( %{$fg[yellow]%}$USER%{$fg[red]%}@%{$fg[yellow]%}%m %{$fg[red]%})"
+  if [[ "$USER" != "$DEFAULT_USER" && "$USER" != "$ALTERNATE_USER" ]]; then
+    context_details+="%{$fg[red]%}( %{$fg[yellow]%}$USER%{$fg[red]%}@%{$fg[yellow]%}%m %{$fg[red]%})"
   fi
   echo $context_details
 }
