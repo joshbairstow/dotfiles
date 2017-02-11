@@ -352,8 +352,8 @@ let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in 
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
-let g:airline_left_sep='<U+E0B0>'
-let g:airline_right_sep='<U+E0B2>'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 let g:tsuquyomi_disable_default_mappings = 1
 
