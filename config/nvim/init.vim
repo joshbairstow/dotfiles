@@ -46,8 +46,8 @@ colorscheme gruvbox           " Set the colorscheme
 set background=dark
 
 " make the highlighting of tabs and other non-text less annoying
-highlight SpecialKey ctermbg=none ctermfg=238 guifg=#39332E
-highlight NonText ctermbg=none ctermfg=238 guifg=#39332E
+highlight SpecialKey ctermbg=none ctermfg=236 guifg=#2E2E2E
+highlight NonText ctermbg=none ctermfg=238 guifg=#444444
 
 " set custom indent guide styles
 let g:indent_guides_auto_colors=0
