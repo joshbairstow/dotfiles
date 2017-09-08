@@ -64,7 +64,6 @@ highlight htmlArg cterm=italic
 set cc=100
 
 set number                  " show line numbers
-set relativenumber          " show relative line numbers
 
 set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
@@ -139,6 +138,9 @@ if has('mouse')
 	set mouse=a
 	" set ttymouse=xterm2
 endif
+
+" live substitue preview
+set inccommand=nosplit
 
 " }}}
 
