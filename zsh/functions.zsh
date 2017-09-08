@@ -23,6 +23,14 @@ function killport() {
     kill -9 $(lsof -i tcp:$1 -t)
 }
 
+function generatejstags() {
+  find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
+}
+
+function generatejstagswithmodules() {
+  find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
+}
+
 # # Create a new directory and enter it
 # function md() {
 #     mkdir -p "$@" && cd "$@"
