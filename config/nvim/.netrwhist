@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/josh/dev/personal/trailTyper'
+let g:netrw_dirhist_2='/home/josh/dev/personal/trailTyper/src'
+let g:netrw_dirhist_3='/home/josh/dev/personal/trailTyper/src/client'
+let g:netrw_dirhist_4='/home/josh/dev/personal/trailTyper/src/client/containers'

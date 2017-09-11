@@ -17,6 +17,10 @@ unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
 
+# per vim health check
+set-option -sg escape-time 10
+set-option -g default-terminal "screen-256color"
+
 ######################
 #### Key Bindings ####
 ######################

@@ -101,8 +101,6 @@ set foldnestmax=10          " deepest fold is 10 levels
 set nofoldenable            " don't fold by default
 set foldlevel=1
 
-set clipboard=unnamed
-
 set ttyfast                 " faster redrawing
 set diffopt+=vertical
 set laststatus=2            " show the satus line all the time
@@ -365,3 +363,11 @@ let g:SuperTabCrMapping = 0
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
+"
+" ripgrep search commands
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf,css,scss}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
