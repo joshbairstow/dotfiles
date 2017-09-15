@@ -82,6 +82,11 @@ fi
 NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # this loads nvm
 
+# adding python location path export
+if [ -d "$HOME/.local" ]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
+
 # adding node to PATH
 # include locally installed packages in PATH
 if [ -d "$HOME/opt" ]; then
@@ -89,7 +94,11 @@ if [ -d "$HOME/opt" ]; then
 fi
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+# adding a writable directory af the front of Scheme library path
+export MITSCHEME_LIBRARY_PATH=~/mit-scheme-plugins:/usr/local/lib/mit-scheme-x86-64
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -103,3 +112,8 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+#
+# fzf key bindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,dist}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

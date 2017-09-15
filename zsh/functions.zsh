@@ -147,3 +147,9 @@ function extract() {
 #
 #     echo $src | highlight -O rtf --syntax $1 --font Inconsoloata --style $style --line-number --font-size 24 | pbcopy
 # }
+
+# function fzf_log() {  
+#   hash=$(git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |  fzf | awk '{print $1}')
+#   echo $hash | xclip
+#   git showtool $hash
+# }
