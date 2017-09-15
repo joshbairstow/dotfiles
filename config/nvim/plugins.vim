@@ -21,7 +21,7 @@ Plug 'lambdatoast/elm.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 
-" search
+" fuzzy file find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
