@@ -122,3 +122,8 @@ export MITSCHEME_LIBRARY_PATH=~/mit-scheme-plugins:/usr/local/lib/mit-scheme-x86
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,dist}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# antigen setup
+source $DOTFILES/zsh/antigen.zsh
+
+antigen theme geometry-zsh/geometry
