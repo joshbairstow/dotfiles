@@ -127,3 +127,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 source $DOTFILES/zsh/antigen.zsh
 
 antigen theme geometry-zsh/geometry
+antigen bundle zsh-users/zsh-syntax-highlighting
