@@ -1,8 +1,14 @@
 # this setting should only be enabled on osx
-# set -g default-command "login-shell"
+set -g default-command "login-shell"
+
+# fixing copy-paste issue for terminal and vim editor input
+
+# bind -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+# set clipboard=unnamed
 
 # tmux display things in 256 colors
-set -g default-terminal "tmux-256color-italic"
+# set -g default-terminal "tmux-256color-italic"
 
 #  enable terminal compability
 set-option -ga terminal-overrides ",tmux-256color-italic:Tc"
@@ -17,7 +23,7 @@ unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
 
-# per vim health check
+# vim CheckHealth options
 set-option -sg escape-time 10
 set-option -g default-terminal "screen-256color"
 
@@ -42,5 +48,5 @@ bind k select-pane -U
 bind l select-pane -R
 
 # enable mouse support for switching panes/windows
-setw -g mouse on
+set -g mouse on
 # set-option -g -q mouse on

@@ -64,7 +64,6 @@ highlight htmlArg cterm=italic
 set cc=100
 
 set number                  " show line numbers
-set relativenumber          " show relative line numbers
 
 set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
@@ -89,9 +88,9 @@ set backspace=indent,eol,start
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=2               " the visible width of tabs
-set softtabstop=2           " edit as if the tabs are 4 characters wide
-set shiftwidth=2            " number of spaces to use for indent and unindent
+set tabstop=4               " the visible width of tabs
+set softtabstop=4           " edit as if the tabs are 4 characters wide
+set shiftwidth=4            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
@@ -137,6 +136,9 @@ if has('mouse')
 	set mouse=a
 	" set ttymouse=xterm2
 endif
+
+" live substitue preview
+set inccommand=nosplit
 
 " }}}
 
@@ -263,13 +265,12 @@ augroup END
 
 " FZF
 """""""""""""""""""""""""""""""""""""
-
+" Open NERDTree by default
+autocmd vimenter * NERDTree
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
-" auto open NERDTree on vim opening
-autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
@@ -340,10 +341,6 @@ let g:neomake_typescript_tsc_maker = {
 \ }
 
 " airline options
-let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
