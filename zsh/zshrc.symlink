@@ -76,29 +76,31 @@ plugins=(git brew celery coffee gradle sublime colorize node ruby osx pep8 pyenv
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# adding rvm to PATH
-[[ -s "$HOME/.rvm/src/rvm/scripts/rvm" ]] && source "$HOME/.rvm/src/rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-  source $HOME/.rvm/scripts/rvm;
-fi
+# /Users/joshbairstow/bin:/usr/local/bin:/usr/local/sbin:/Users/joshbairstow/.local/bin:/Users/joshbairstow/.nvm/versions/node/v8.1.2/bin:/Users/joshbairstow/.rvm/gems/ruby-2.1.0/bin:/Users/joshbairstow/.rvm/gems/ruby-2.1.0@global/bin:/Users/joshbairstow/.rvm/rubies/ruby-2.1.0/bin:/Users/joshbairstow/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/joshbairstow/.fzf/bin:/Users/joshbairstow/.rvm/bin
 
 # load nvm into this environment
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # this loads nvm
 
-# adding python location path export
-if [ -d "$HOME/.local" ]; then
-  export PATH=$HOME/.local/bin:$PATH
-fi
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # adding node to PATH
 # include locally installed packages in PATH
 if [ -d "$HOME/opt" ]; then
-    PATH="$PATH:$HOME/opt/node/bin"
+  PATH="$PATH:$HOME/opt/node/bin"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# adding python location path export
+if [ -d "$HOME/.local" ]; then
+ PATH=$HOME/.local/bin:$PATH
+fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+PATH="$PATH:$HOME/.rvm/bin"
+
+echo $PATH
+
+export PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #
@@ -128,3 +130,4 @@ source $DOTFILES/zsh/antigen.zsh
 
 antigen theme geometry-zsh/geometry
 antigen bundle zsh-users/zsh-syntax-highlighting
+
