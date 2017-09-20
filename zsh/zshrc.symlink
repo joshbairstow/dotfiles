@@ -98,8 +98,6 @@ fi
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"
 
-echo $PATH
-
 export PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -130,4 +128,3 @@ source $DOTFILES/zsh/antigen.zsh
 
 antigen theme geometry-zsh/geometry
 antigen bundle zsh-users/zsh-syntax-highlighting
-
