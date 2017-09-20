@@ -1,3 +1,8 @@
 [submodule ".config/base16-shell"]
   path = .config/base16-shell
   url = git@github.com:chriskempson/base16-shell.git
+  ignore = dirty
+
+[submodule "config/nvim/plugged/gruvbox"]
+  path = config/nvim/plugged/gruvbox
+  ignore = dirty
