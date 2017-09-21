@@ -30,6 +30,6 @@ alias removeDanglingImages="docker rmi $(docker images --quiet --filter "danglin
 
 # emacs
 if [[ `uname` == "Darwin" ]]; then
-    echo "Setting tEmacs alias for OSX"
+    # echo "Setting tEmacs alias for OSX"
     alias tEmacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 fi
