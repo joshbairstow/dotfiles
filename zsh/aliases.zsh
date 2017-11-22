@@ -23,6 +23,9 @@ alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
 
+# terminal emacs
+alias tEmacs="emacs -nw"
+
 # local for work
 alias sshBuildslave="ssh -i ~/.ssh/sydney.pem ubuntu@buildslave.dev.nbvcloud.com"
 alias sshBuildmaster="ssh -i ~/.ssh/sydney.pem ec2-user@zonea.webapp.dev.nbvcloud.com"
