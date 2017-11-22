@@ -29,4 +29,10 @@ alias tEmacs="emacs -nw"
 # local for work
 alias sshBuildslave="ssh -i ~/.ssh/sydney.pem ubuntu@buildslave.dev.nbvcloud.com"
 alias sshBuildmaster="ssh -i ~/.ssh/sydney.pem ec2-user@zonea.webapp.dev.nbvcloud.com"
-# alias removeDanglingImages="docker rmi $(docker images --quiet --filter "dangling=true")"
+alias removeDanglingImages="docker rmi $(docker images --quiet --filter "dangling=true")"
+
+# emacs
+if [[ `uname` == "Darwin" ]]; then
+    # echo "Setting tEmacs alias for OSX"
+    alias tEmacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+fi

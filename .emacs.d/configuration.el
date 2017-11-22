@@ -4,7 +4,7 @@
 (sensible-defaults/use-all-keybindings)
 (sensible-defaults/backup-to-temp-directory)
 
-(add-to-list 'load-path "~/.emacs.d/evil")
+(add-to-list 'load-path "~/git/evil")
 (require 'evil)
 (evil-mode 1)
 
@@ -54,7 +54,7 @@
 
 (setq scheme-program-name "/Applications/MIT-Scheme.app/Contents/Resources/mit-scheme")
 
-(add-to-list 'load-path "~/Code/Resource/rainbow-delimiters")
+(add-to-list 'load-path "~/git/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
@@ -64,3 +64,8 @@
       mac-command-modifier 'meta
       mac-option-modifier 'none)
 (set-keyboard-coding-system nil)
+
+;;; Enable Ido mode by default
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)

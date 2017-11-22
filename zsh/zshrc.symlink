@@ -11,6 +11,24 @@ ZSH_CUSTOM=$DOTFILES/zsh
 export TERM="xterm-256color"
 
 # # #
+# Path definiton
+# # #
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# include locally installed packages in PATH
+if [ -d "$HOME/opt" ]; then
+  PATH="$PATH:$HOME/opt/node/bin"
+fi
+# adding python location path export
+if [ -d "$HOME/.local" ]; then
+ PATH=$HOME/.local/bin:$PATH
+fi
+# add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+if [ -d "$HOME/.rvm" ]; then
+  PATH="$PATH:$HOME/.rvm/bin"
+fi
+export PATH
+
+# # #
 # Shell settings
 # # #
 export ZSH_CUSTOM
@@ -41,7 +59,7 @@ export VISUAL=$EDITOR
 # Java settings
 # # #
 if [[ `uname` == "Darwin" ]]; then
-  echo "Setting java directory OSX"
+  # echo "Setting java directory OSX"
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
   launchctl setenv JAVA_HOME "$JAVA_HOME"
 # elif [[ `uname` == "Linux" ]]; then
@@ -55,19 +73,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # this loads nvm
 
 # # #
-# Path definiton
+# fzf settings
 # # #
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-# include locally installed packages in PATH
-if [ -d "$HOME/opt" ]; then
-  PATH="$PATH:$HOME/opt/node/bin"
-fi
-# adding python location path export
-if [ -d "$HOME/.local" ]; then
- PATH=$HOME/.local/bin:$PATH
-fi
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-if [ -d "$HOME/.rvm" ]; then
-  PATH="$PATH:$HOME/.rvm/bin"
-fi
-export PATH
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,dist}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

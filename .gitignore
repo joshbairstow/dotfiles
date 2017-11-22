@@ -1,2 +1,3 @@
 .config/base16-shell/
 config/nvim/plugged/
+.emacs.d/ido.last
