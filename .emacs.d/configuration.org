@@ -23,6 +23,14 @@ Use =evil=.
   (evil-mode 1)
 #+END_SRC
 
+Make adjustment to expression evaluation when the point is on a lisp closing paren in evil mode
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "~/git/evil-adjust")
+  (require 'evil-adjust)
+  (evil-adjust)
+#+END_SRC
+
 Enable =surround= everywhere.
 
 #+BEGIN_SRC emacs-lisp
