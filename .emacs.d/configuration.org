@@ -18,7 +18,7 @@ Use [[https://github.com/hrs/sensible-defaults.el][sensible-defaults.el]] for so
 Use =evil=.
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'load-path "~/.emacs.d/evil")
+  (add-to-list 'load-path "~/git/evil")
   (require 'evil)
   (evil-mode 1)
 #+END_SRC
@@ -113,7 +113,7 @@ This reduces that.
 
 (setq scheme-program-name "/Applications/MIT-Scheme.app/Contents/Resources/mit-scheme")
 
-(add-to-list 'load-path "~/Code/Resource/rainbow-delimiters")
+(add-to-list 'load-path "~/git/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 #+END_SRC
@@ -125,4 +125,12 @@ This reduces that.
       mac-command-modifier 'meta
       mac-option-modifier 'none)
 (set-keyboard-coding-system nil)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;;; Enable Ido mode by default
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(setq ido-create-new-buffer 'always)
+(ido-mode 1)
 #+END_SRC
