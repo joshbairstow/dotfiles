@@ -8,6 +8,10 @@
 (require 'evil)
 (evil-mode 1)
 
+(add-to-list 'load-path "~/git/evil-adjust")
+(require 'evil-adjust)
+(evil-adjust)
+
 ;;  (global-evil-surround-mode 1)
 
 (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
@@ -68,4 +72,5 @@
 ;;; Enable Ido mode by default
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-create-new-buffer 'always)
 (ido-mode 1)
