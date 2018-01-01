@@ -18,7 +18,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " }}}
 
@@ -44,6 +44,7 @@ syntax on
 " set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors"
 colorscheme gruvbox           " Set the colorscheme
 set background=dark
+let g:gruvbox_contrast_dark='soft'
 
 " make the highlighting of tabs and other non-text less annoying
 highlight SpecialKey ctermbg=none ctermfg=236 guifg=#2E2E2E
@@ -88,9 +89,9 @@ set backspace=indent,eol,start
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4               " the visible width of tabs
-set softtabstop=4           " edit as if the tabs are 4 characters wide
-set shiftwidth=4            " number of spaces to use for indent and unindent
+set tabstop=2               " the visible width of tabs
+set softtabstop=2           " edit as if the tabs are 4 characters wide
+set shiftwidth=2            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
@@ -368,3 +369,27 @@ let g:rg_command = '
   \ -g "!{.git,node_modules,vendor}/*" '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+
+set splitbelow
+set splitright
+
+" snippets configuration
+let g:UltiSnipsExpandTrigger='<C-l>'
+
+" jsx syntax highlighting configuration
+let g:jsx_ext_required = 0
+
+" vim-prettier configuration
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_enabled = 0
+
+autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.less PrettierAsync
+
+let g:prettier#config#print_width = 100
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'all'

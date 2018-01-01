@@ -8,9 +8,10 @@
 (require 'evil)
 (evil-mode 1)
 
-(add-to-list 'load-path "~/git/evil-adjust")
-(require 'evil-adjust)
-(evil-adjust)
+;;  (add-to-list 'load-path "~/git/evil-adjust")
+;;  (require 'evil-adjust)
+;;  (evil-adjust)
+;; (evil-move-beyond-eol t)
 
 ;;  (global-evil-surround-mode 1)
 
@@ -74,3 +75,6 @@
 (setq ido-everywhere t)
 (setq ido-create-new-buffer 'always)
 (ido-mode 1)
+
+;;; Setup mit-scheme config
+(setq scheme-program-name "/usr/local/bin/mit-scheme")

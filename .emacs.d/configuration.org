@@ -26,9 +26,10 @@ Use =evil=.
 Make adjustment to expression evaluation when the point is on a lisp closing paren in evil mode
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'load-path "~/git/evil-adjust")
-  (require 'evil-adjust)
-  (evil-adjust)
+;;  (add-to-list 'load-path "~/git/evil-adjust")
+;;  (require 'evil-adjust)
+;;  (evil-adjust)
+;; (evil-move-beyond-eol t)
 #+END_SRC
 
 Enable =surround= everywhere.
@@ -141,4 +142,9 @@ This reduces that.
 (setq ido-everywhere t)
 (setq ido-create-new-buffer 'always)
 (ido-mode 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+;;; Setup mit-scheme config
+(setq scheme-program-name "/usr/local/bin/mit-scheme")
 #+END_SRC

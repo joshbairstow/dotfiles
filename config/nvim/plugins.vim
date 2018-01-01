@@ -12,14 +12,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 
 " html
-Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
+Plug 'mattn/emmet-vim', { 'for': 'html' }
 
 " elm
 Plug 'lambdatoast/elm.vim'
 
+" React snippets
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
+
 " syntax highlighting
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'plasticboy/vim-markdown'
+
+" syntax formatting
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss'] }
 
 " fuzzy file find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
