@@ -26,6 +26,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'plasticboy/vim-markdown'
+Plug 'styled-components/vim-styled-components'
 
 " syntax formatting
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss'] }

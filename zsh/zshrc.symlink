@@ -60,7 +60,7 @@ export VISUAL=$EDITOR
 # # #
 if [[ `uname` == "Darwin" ]]; then
   # echo "Setting java directory OSX"
-  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.6.0_65-b14-468)
   launchctl setenv JAVA_HOME "$JAVA_HOME"
 # elif [[ `uname` == "Linux" ]]; then
 #   echo "Starting on linux system"

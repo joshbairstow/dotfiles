@@ -22,6 +22,8 @@
 (when window-system
   (scroll-bar-mode -1))
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
 (setq frame-title-format '((:eval (projectile-project-name))))
 
 (global-prettify-symbols-mode t)

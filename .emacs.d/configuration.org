@@ -56,6 +56,12 @@ I don't usually use the menu or scroll bar, and they take up useful space.
     (scroll-bar-mode -1))
 #+END_SRC
 
+** Update colour theme
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+#+END_SRC
+
 The default frame title isn't useful. This binds it to the name of the current
 project:
 
