@@ -17,8 +17,8 @@ set textwidth=120
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " }}}
 
@@ -87,7 +87,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set backspace=indent,eol,start
 
 " clipboard settings
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
@@ -136,10 +136,10 @@ set visualbell
 set t_vb=
 set tm=500
 
-" if has('mouse')
-	" set mouse=a
+if has('mouse')
+	set mouse=a
 	" set ttymouse=xterm2
-" endif
+endif
 
 " live substitue preview
 set inccommand=nosplit
@@ -394,7 +394,7 @@ let g:prettier#quickfix_enabled = 0
 autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.less PrettierAsync
 
 let g:prettier#config#print_width = 160
-let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_width = 2
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'true'
 let g:prettier#config#bracket_spacing = 'true'
