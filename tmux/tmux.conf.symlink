@@ -5,7 +5,7 @@
 
 # bind -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 # also an osx related fix
-# set-option -g default-command "reattach-to-user-namespace -l zsh"
+set-option -g default-command "reattach-to-user-namespace -l zsh"
 # set clipboard=unnamed
 
 # tmux display things in 256 colors

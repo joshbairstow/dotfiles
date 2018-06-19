@@ -1,0 +1,76 @@
+snippet nbvrfc "NBV Web React Functional Component" b
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function ${1:`!v expand('%:t:r')`}(${3:props}) {
+	return (
+		<div>
+			$4
+		</div>
+	);
+}
+
+$1.defaultProps = {};
+
+$1.propTypes = {};
+
+export default $1;
+endsnippet
+
+snippet nbvrts "NBV Web React Component Test Suite" b
+import React from 'react';
+import { shallow } from 'enzyme';
+import jasmineEnzyme from 'jasmine-enzyme';
+
+import { checkWrapperHasComponentWithCount } from 'test/helper-utilities/component';
+
+import $1 from '$1';
+
+describe('<$1 />', () => {
+	let props;
+
+	const testSetup = () => {
+		props = {};
+		jasmineEnzyme();
+	};
+
+	beforeEach(testSetup);
+
+	it('should ...', () => {
+		const wrapper = shallow(<$1 {...props} />);
+		const checkComponentHasCount = checkWrapperHasComponentWithCount(wrapper);
+		checkComponentHasCount(, 0);
+	});
+});
+endsnippet
+
+snippet nbvrrcc "NBV Web React Redux Class Component" b
+import React, { Component} from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+export class ${1:`!v expand('%:t:r')`} extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div>
+				$3
+			</div>
+		);
+	}
+}
+
+$1.propTypes = {
+	children: PropTypes.node,
+	dispatch: PropTypes.func.isRequired,
+};
+
+function mapStateToProps(state) {
+	return {};
+}
+
+export default connect(mapStateToProps)($1);
+endsnippet
